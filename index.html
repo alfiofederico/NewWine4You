@@ -7,6 +7,10 @@
 <title>Wine4U</title>
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="./assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script>
@@ -37,7 +41,12 @@ tailwind.config = {
 <!-- NAV -->
 <nav class="fixed w-full z-50 bg-white/95 backdrop-blur border-b border-gray-100">
   <div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
-    <span class="font-heading text-xl font-semibold tracking-tight text-primary">Wine4U</span>
+    <div class="flex items-center gap-3">
+      <img src="./assets/logo.webp" alt="Wine4U logo" class="w-12 h-12 -mr-3 object-contain">
+      <span class="font-heading text-xl font-semibold tracking-tight text-primary">
+        Wine4U
+      </span>
+    </div>
     <div class="hidden md:flex gap-8 text-sm text-gray-600">
       <a href="#about" class="relative hover:text-primary transition after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Chi Siamo</a>
       <a href="#services" class="relative hover:text-primary transition after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Servizi</a>
@@ -75,26 +84,63 @@ tailwind.config = {
 
 <!-- ABOUT -->
 <section id="about" class="py-24 bg-gradient-to-b from-white to-bgsoft fade-in">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6 items-center">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6 items-start">
 
+    <!-- LEFT -->
     <div>
-      <h2 class="text-[38px] md:text-[56px] tracking-tight font-heading text-primary mb-3">Chi Siamo</h2>
+      <h2 class="text-[38px] md:text-[56px] tracking-tight font-heading text-primary mb-3">
+        Chi Siamo
+      </h2>
       <div class="w-16 h-[3px] bg-accent mb-8 rounded-full"></div>
 
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <p class="text-gray-700 leading-relaxed mb-10">
         <span class="font-semibold text-primary">Francesco De Mauri</span> — consulente con oltre 18 anni di esperienza nel mercato asiatico.
       </p>
 
-      <div class="space-y-4">
-        <div class="p-6 bg-accent/10 border-l-4 border-accent rounded-xl">Esperienza internazionale</div>
-        <div class="p-6 bg-accent/10 border-l-4 border-accent rounded-xl">Collaborazioni con cantine italiane</div>
-        <div class="p-6 bg-accent/10 border-l-4 border-accent rounded-xl">Expertise Ho.Re.Ca</div>
+      <!-- 👇 CARDS WRAPPER -->
+      <div id="about-cards" class="space-y-4">
+
+        <div class="p-6 bg-accent/10 border-l-4 border-accent rounded-xl hover:shadow-md transition">
+          <h3 class="font-semibold text-primary mb-1">Esperienza Internazionale</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Nato a Cagliari nel 1985, con formazione in Business Accounting e Marketing Management. 
+            Oltre 18 anni di esperienza in Giappone, con fluente padronanza della lingua giapponese.
+          </p>
+        </div>
+
+        <div class="p-6 bg-accent/10 border-l-4 border-accent rounded-xl hover:shadow-md transition">
+          <h3 class="font-semibold text-primary mb-1">Track Record Provato</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Responsabile presso Città D’Italia–Takaraya (Nagoya) e JET (Japan Europe Trading). 
+            Collaborazioni dirette con Ferrari, Planeta, Masi, Frescobaldi, Livio Felluga, 
+            Badia a Coltibuono, Borgogno e altri.
+          </p>
+        </div>
+
+        <div class="p-6 bg-accent/10 border-l-4 border-accent rounded-xl hover:shadow-md transition">
+          <h3 class="font-semibold text-primary mb-1">Expertise Settoriale</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Competenze avanzate in Ho.Re.Ca., grande distribuzione, market entry strategy, 
+            brand positioning e gestione della logistica tra Europa e Asia.
+          </p>
+        </div>
+
       </div>
     </div>
 
-    <img loading="lazy"
-         src="https://d2xsxph8kpxj0f.cloudfront.net/310519663594488052/cGdMdeFTbXsrhh35kvaE82/wine4u-hero-cellar-mmRPTAn46WnootD8WGdwfo.webp"
-         class="rounded-2xl shadow-soft border-4 border-white">
+    <!-- RIGHT -->
+    <div class="relative flex justify-center md:justify-end">
+
+      <!-- glow background -->
+      <div class="absolute inset-0 bg-accent/10 blur-2xl rounded-3xl -z-10"></div>
+
+      <!--  KEY PART: margin-top -->
+      <img loading="lazy"
+           src="assets/checcho.webp"
+           class="rounded-2xl shadow-soft border-4 border-white max-w-sm w-full md:mt-[220px]">
+
+    </div>
+
   </div>
 </section>
 
@@ -103,6 +149,12 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6 fade-in">
 
     <h2 class="text-[38px] md:text-[56px] tracking-tight font-heading text-primary mb-3">I Nostri Servizi</h2>
+    <p class="text-gray-600 leading-relaxed max-w-3xl mb-16">
+  Dal 2015, Wine4U ha collegato i produttori italiani con gli importatori giapponesi 
+  e i partner dell'ospitalità. Offriamo accesso al mercato, gestione del marchio e 
+  supporto alla distribuzione — proposte personalizzate per ogni cliente — 
+  alimentate da un team in loco e da una rete bicontinentale.
+</p>
     <div class="w-16 h-[3px] bg-accent mb-8 rounded-full"></div>
 
     <div class="grid md:grid-cols-3 gap-8">
@@ -110,19 +162,19 @@ tailwind.config = {
       <div class="p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
         <div class="text-4xl mb-4">🌏</div>
         <h3 class="font-semibold text-lg mb-2">Market Entry</h3>
-        <p class="text-gray-600 text-sm">Ingresso strategico nel mercato asiatico.</p>
+        <p class="text-gray-600 text-sm">Supporto completo per l'ingresso nel mercato giapponese e asiatico con strategie personalizzate e network consolidato.</p>
       </div>
 
       <div class="p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
         <div class="text-4xl mb-4">⭐</div>
         <h3 class="font-semibold text-lg mb-2">Brand Management</h3>
-        <p class="text-gray-600 text-sm">Posizionamento e sviluppo del brand.</p>
+        <p class="text-gray-600 text-sm">Gestione del marchio e posizionamento strategico nei mercati target con focus sulla qualità e sulla comunicazione.</p>
       </div>
 
       <div class="p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
         <div class="text-4xl mb-4">📦</div>
         <h3 class="font-semibold text-lg mb-2">Distribution</h3>
-        <p class="text-gray-600 text-sm">Supporto logistico e distributivo.</p>
+        <p class="text-gray-600 text-sm">Supporto logistico e distributivo attraverso la nostra rete bicontinentale consolidata e partner affidabili.</p>
       </div>
 
     </div>
@@ -130,23 +182,91 @@ tailwind.config = {
 </section>
 
 <!-- PARTNERS -->
+<!-- PARTNERS -->
 <section id="partners" class="py-24 bg-bgsoft fade-in">
   <div class="max-w-6xl mx-auto px-6">
 
-    <h2 class="text-[38px] md:text-[56px] tracking-tight font-heading text-primary mb-3">I Nostri Partner</h2>
-    <div class="w-16 h-[3px] bg-accent mb-8 rounded-full"></div>
+    <h2 class="text-[38px] md:text-[56px] tracking-tight font-heading text-primary mb-3">
+      I Nostri Partner
+    </h2>
+    <div class="w-16 h-[3px] bg-accent mb-12 rounded-full"></div>
 
     <div class="grid md:grid-cols-2 gap-12">
 
-      <div class="space-y-4">
-        <div class="p-5 bg-white rounded-xl shadow-soft hover:shadow-lg transition">Argiolas – Sardegna</div>
-        <div class="p-5 bg-white rounded-xl shadow-soft hover:shadow-lg transition">Tolaini – Toscana</div>
-        <div class="p-5 bg-white rounded-xl shadow-soft hover:shadow-lg transition">Argentiera – Toscana</div>
+      <!-- LEFT COLUMN -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700 mb-6">
+          Cantine Italiane
+        </h3>
+
+        <div class="space-y-4">
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <p class="font-semibold text-primary">Argiolas</p>
+            <p class="text-sm text-gray-500">Sardegna</p>
+            <p class="text-sm text-gray-600 mt-2">Export Area Manager Japan</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <p class="font-semibold text-primary">Tolaini</p>
+            <p class="text-sm text-gray-500">Toscana</p>
+            <p class="text-sm text-gray-600 mt-2">Export Area Manager APAC</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <p class="font-semibold text-primary">Argentiera</p>
+            <p class="text-sm text-gray-500">Toscana</p>
+            <p class="text-sm text-gray-600 mt-2">Export Area Manager APAC</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <p class="font-semibold text-primary">Gorghi Tondi</p>
+            <p class="text-sm text-gray-500">Sicilia</p>
+            <p class="text-sm text-gray-600 mt-2">Consultant & Brand Manager Japan</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <p class="font-semibold text-primary">De Stefani</p>
+            <p class="text-sm text-gray-500">Veneto</p>
+            <p class="text-sm text-gray-600 mt-2">Brand Ambassador Japan</p>
+          </div>
+
+        </div>
       </div>
 
-      <div class="space-y-4">
-        <div class="p-5 bg-white rounded-xl shadow-soft hover:shadow-lg transition">Unit Srl – Italia</div>
-        <div class="p-5 bg-white rounded-xl shadow-soft hover:shadow-lg transition">Threebond – Giappone</div>
+      <!-- RIGHT COLUMN -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700 mb-6">
+          Agenzie Internazionali
+        </h3>
+
+        <div class="space-y-4">
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300">
+            <p class="font-semibold text-primary">Unit Srl</p>
+            <p class="text-sm text-gray-500">Italia</p>
+            <p class="text-sm text-gray-600 mt-2">Market development for Japan</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300">
+            <p class="font-semibold text-primary">Ithai Trade Srl</p>
+            <p class="text-sm text-gray-500">Italia / Thailandia</p>
+            <p class="text-sm text-gray-600 mt-2">Asian market expansion</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300">
+            <p class="font-semibold text-primary">Fanvino</p>
+            <p class="text-sm text-gray-500">Spagna</p>
+            <p class="text-sm text-gray-600 mt-2">Wine distribution Asia</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300">
+            <p class="font-semibold text-primary">Threebond Trading</p>
+            <p class="text-sm text-gray-500">Giappone</p>
+            <p class="text-sm text-gray-600 mt-2">Italian wine distribution</p>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -157,20 +277,114 @@ tailwind.config = {
 <section id="contact" class="py-24 bg-primary text-white fade-in">
   <div class="max-w-4xl mx-auto px-6">
 
-    <h2 class="text-[38px] md:text-[56px] font-heading mb-6">Contattaci</h2>
+    <h2 class="text-[38px] md:text-[56px] font-heading mb-6">
+      Contattaci
+    </h2>
 
-    <p class="mb-8">francesco@wine4u.info</p>
+    <!-- Intro -->
+    <p class="text-white/85 text-lg mb-10 leading-relaxed max-w-2xl">
+      Siamo pronti a discutere come Wine4U può supportare la tua strategia 
+      di espansione nel mercato asiatico.
+    </p>
 
-    <button class="px-6 py-3 bg-accent text-primary rounded-xl shadow-soft hover:shadow-xl transition">
+    <!-- Contact Info -->
+    <div class="space-y-6 text-[16px]">
+
+      <!-- Email -->
+      <div class="flex items-center gap-4">
+        <span class="text-xl">📧</span>
+        <a href="mailto:francesco@wine4u.info" class="hover:underline">
+          francesco@wine4u.info
+        </a>
+      </div>
+
+      <!-- Instagram -->
+      <div class="flex items-center gap-4">
+        <span class="text-xl">📸</span>
+        <a href="https://instagram.com/wineltorpedero" target="_blank" class="hover:underline">
+          @wineltorpedero
+        </a>
+      </div>
+
+      <!-- Location -->
+      <div class="flex items-center gap-4">
+        <span class="text-xl">📍</span>
+        <span>Giappone & Italia</span>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <button class="mt-10 px-6 py-3 bg-accent text-primary rounded-xl shadow-soft hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200">
       Invia un Messaggio
     </button>
+
+  </div>
+</section>
+ <!-- insta -->
+<section class="py-24 bg-white fade-in">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <!-- Title -->
+    <h2 class="text-[34px] md:text-[48px] font-heading text-primary mb-4">
+      Seguici su Instagram
+    </h2>
+
+    <p class="text-gray-600 mb-10">@wineltorpedero</p>
+
+    <!-- Carousel -->
+    <div class="relative overflow-hidden rounded-2xl shadow-soft">
+
+      <div id="carousel" class="flex transition-transform duration-500">
+
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663594488052/cGdMdeFTbXsrhh35kvaE82/wine4u-bottles-collection-OkL9M2Qp8vK3nR5sT7uW9x.webp"
+             class="w-full flex-shrink-0 object-cover">
+
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663594488052/cGdMdeFTbXsrhh35kvaE82/wine4u-tasting-event-P2qR4sT6uV8wX0yZ1aB3cD.webp"
+             class="w-full flex-shrink-0 object-cover">
+
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663594488052/cGdMdeFTbXsrhh35kvaE82/wine4u-hero-cellar-mmRPTAn46WnootD8WGdwfo.webp"
+             class="w-full flex-shrink-0 object-cover">
+
+      </div>
+
+      <!-- Buttons -->
+      <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white">
+        ‹
+      </button>
+
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white">
+        ›
+      </button>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10">
+      <a href="https://instagram.com/wineltorpedero" target="_blank"
+         class="inline-block px-6 py-3 bg-primary text-white rounded-full shadow-soft hover:shadow-lg transition">
+        Visita il profilo Instagram
+      </a>
+    </div>
 
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="bg-primary text-white text-center py-12">
-  ©2026 Wine4U
+
+  <p class="font-medium">
+    © 2026 Wine4U — All Rights Reserved
+  </p>
+
+  <p class="text-white/80 mt-2">
+    Powered by Federico
+  </p>
+
+  <p class="text-white/60 text-sm mt-4">
+    Import & Export Consulting | Japan & Italy
+  </p>
+
 </footer>
 
 

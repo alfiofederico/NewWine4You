@@ -40,3 +40,23 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+let currentIndex = 0;
+const carousel = document.getElementById("carousel");
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % 3;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + 3) % 3;
+  updateCarousel();
+}
+
+// auto slide
+setInterval(nextSlide, 5000);
