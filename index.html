@@ -59,18 +59,39 @@ tailwind.config = {
 <!-- NAV -->
 <nav class="fixed w-full z-50 bg-white/95 backdrop-blur border-b border-gray-100">
   <div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
-    <div class="flex items-center gap-3">
-      <img src="./assets/logo.webp" alt="Wine4U logo" class="w-12 h-12 -mr-3 object-contain">
-      <span class="font-heading text-xl font-semibold tracking-tight text-primary">
-        Wine4U
-      </span>
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.webp" class="w-10 h-10 object-contain">
+      <span class="font-heading text-xl font-semibold text-primary">Wine4U</span>
     </div>
+
+    <!-- Desktop Menu -->
     <div class="hidden md:flex gap-8 text-sm text-gray-600">
-      <a href="#about" class="relative hover:text-primary transition after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Chi Siamo</a>
-      <a href="#services" class="relative hover:text-primary transition after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Servizi</a>
-      <a href="#partners" class="relative hover:text-primary transition after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Partner</a>
-      <a href="#contact" class="relative hover:text-primary transition after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Contatti</a>
+      <a href="#about" class="hover:text-primary transition">Chi Siamo</a>
+      <a href="#services" class="hover:text-primary transition">Servizi</a>
+      <a href="#partners" class="hover:text-primary transition">Partner</a>
+      <a href="#contact" class="hover:text-primary transition">Contatti</a>
     </div>
+
+    <!-- Hamburger -->
+      <button id="menu-btn" class="md:hidden flex flex-col justify-between w-6 h-5">
+        <span class="block h-[2px] w-full bg-primary transition-all duration-300"></span>
+        <span class="block h-[2px] w-full bg-primary transition-all duration-300"></span>
+        <span class="block h-[2px] w-full bg-primary transition-all duration-300"></span>
+      </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu"
+       class="hidden flex-col bg-white border-t border-gray-100 md:hidden px-6 py-6 space-y-4 text-gray-700">
+
+    <a href="#about" class="block">Chi Siamo</a>
+    <a href="#services" class="block">Servizi</a>
+    <a href="#partners" class="block">Partner</a>
+    <a href="#contact" class="block">Contatti</a>
+
   </div>
 </nav>
 

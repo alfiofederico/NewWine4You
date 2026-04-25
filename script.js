@@ -60,3 +60,23 @@ function prevSlide() {
 
 // auto slide
 setInterval(nextSlide, 5000);
+
+// Mobile menu
+
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    menuBtn.classList.toggle("menu-open");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll("#mobile-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuBtn.classList.remove("menu-open");
+    });
+  });
+}
